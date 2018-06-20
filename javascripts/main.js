@@ -4,11 +4,74 @@ let mouseX;
 let mouseY;
 let k = 0;
 let cursor_radius = 30;
+let particles_array = [];
+let particle = {
+    vx: 0,
+    vy: 0,
+    x: 0,
+    y: 0
+};
+let p;
+let force, distance;
+let dx, dy, vx, vy;
+let theta;
 
 
+function setup(){
+    ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    for (i = 0; i < 120; i += 1) {
+        for (j = 0; j < 60; j += 1) {
+            
+            let i1 = 50 + i * 7;
+
+            let j1 = 25 + j * 7;
+            
+            p = Object.create(particle);
+            p.x = i1;
+            p.original_x = i1;
+            p.y = j1;
+            p.original_y = j1;
+            particles_array[k] = p;
+            
+            k += 1; 
+        }
+    }
+    console.log(particles_array);
+    
+    canvas.addEventListener('mousemove', function (e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+}
 
 
 function update(){
+    for (let k = 0; k < particles_array.length; k++) {
+        
+        p = particles_array[k];
+        dx = mouseX - p.x;
+        dy = mouseY - p.y;
+
+
+        //all physics credit goes to @soulwire https://github.com/soulwire
+
+        distance = (dx**2) +  (dy**2);
+        force = -(cursor_radius**2)/ distance;
+
+        if ( distance < cursor_radius**2) {
+            theta = Math.atan2(dy, dx);
+            p.vx += force * Math.cos(theta);
+            p.vy += force * Math.sin(theta);
+        }
+
+        p.vx *= 0.8;
+        p.vy *= 0.8;
+        p.x += p.vx + (p.original_x - p.x) * 0.2
+        p.y += p.vy + (p.original_y - p.y) * 0.2
+
+        
+    }
     draw();
     window.requestAnimationFrame(update);
 }
@@ -16,58 +79,29 @@ function update(){
 
 
 function draw() {
+
     ctx.clearRect(0,0,canvas.width, canvas.height);
-    ctx.fillStyle = "black";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
- 
-    
-    for(i = 0 ; i < 120; i+= 1) {
-        for(j = 0 ; j < 60; j+=1){
+    ctx.fillStyle = "black"
+    ctx.fillRect(0,0,canvas.width, canvas.height);
+
+    for (let k = 0; k < particles_array.length; k++) {
+        p = particles_array[k];
         ctx.beginPath();
-        let i1 = 50 + i * 7;
-
-        let j1 = 25 + j * 7; 
-            // console.log(mouseX);
-            
-        
-            if(Math.pow(mouseX-i1,2) + Math.pow(mouseY-j1, 2) < Math.pow(cursor_radius,2)){
-                if (i1 < mouseX && j1 < mouseY) {
-
-                ctx.arc(i1 - cursor_radius, j1 - cursor_radius, 1, 0, Math.PI * 2, true);
-            } else if (i1 < mouseX && j1 > mouseY) {
-                ctx.arc(i1 - cursor_radius, j1 + cursor_radius, 1, 0, Math.PI * 2, true);
-            } else if (i1 > mouseX && j1 < mouseY) {
-                ctx.arc(i1 + cursor_radius, j1 - cursor_radius, 1, 0, Math.PI * 2, true);
-            } else if (i1 > mouseX && j1 > mouseY) {
-                ctx.arc(i1 + cursor_radius, j1 + cursor_radius, 1, 0, Math.PI * 2, true);
-            }
-                // ctx.arc(i1 + 30, j1 + 30, 1, 0, Math.PI * 2, true);
-                ctx.closePath();
-            ctx.fillStyle = "red";
-            }
-            else {
-            ctx.arc(i1, j1, 1, 0, Math.PI * 2, true);
-            ctx.closePath();
-            ctx.fillStyle = "white";
-        }
+        ctx.arc(p.x, p.y, 1, 0, Math.PI * 2, true);
+        ctx.closePath();
+        ctx.fillStyle = "white";
         ctx.fill();
-
+        
     }
     
 }
-// debugger
-    
-}
 
-
+setup();
 window.requestAnimationFrame(update);
 
 
 
-canvas.addEventListener('mousemove', function (e) {
-    mouseX = e.clientX;
-    mouseY = e.clientY; 
-});
+
 
 
 
