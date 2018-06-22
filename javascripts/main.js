@@ -19,11 +19,6 @@ let cl = 0;
 
 
 let gravity_input = document.getElementById('gravity');
-// gravity_input.onchange((e) => {
-//     gi = gravity_input.value
-//     console.log(gi);
-
-// })
 
 gravity_input.addEventListener("input", updateGi);
 
@@ -32,29 +27,7 @@ function updateGi(val){
     console.log(gi);
 }
 
-// let fs = document.getElementById('fs');
-// // fs.addEventListener("click", toggleFullScreen);
 
-// function toggleFullScreen() {
-//     if ((document.fullScreenElement && document.fullScreenElement !== null) ||
-//         (!document.mozFullScreen && !document.webkitIsFullScreen)) {
-//         if (document.documentElement.requestFullScreen) {
-//             document.documentElement.requestFullScreen();
-//         } else if (document.documentElement.mozRequestFullScreen) {
-//             document.documentElement.mozRequestFullScreen();
-//         } else if (document.documentElement.webkitRequestFullScreen) {
-//             document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-//         }
-//     } else {
-//         if (document.cancelFullScreen) {
-//             document.cancelFullScreen();
-//         } else if (document.mozCancelFullScreen) {
-//             document.mozCancelFullScreen();
-//         } else if (document.webkitCancelFullScreen) {
-//             document.webkitCancelFullScreen();
-//         }
-//     }
-// }
 
 function setup(){
     ctx.fillStyle = "#191919";
@@ -98,23 +71,6 @@ function setup(){
     }
 
 
-
-
-
-
-
-
-    // for (let k = 0; k < particles_array.length; k++) {
-    //     // debugger
-    //     p = particles_array[k];
-    //     ctx.beginPath();
-    //     ctx.arc(p.x, p.y, 1, 0, Math.PI * 2, true);
-    //     ctx.closePath();
-    //     ctx.fillStyle = "white";
-    //     ctx.fill();
-    //     // p.changed = true;
-    // }
-
     bounds = canvas.getBoundingClientRect();
     
     canvas.addEventListener('mousemove', function (e) {
@@ -132,7 +88,7 @@ function update(){
         dy = mouseY - p.y;
 
 
-        //physics credit goes to @soulwire https://github.com/soulwire
+        //basic physics credit goes to @soulwire https://github.com/soulwire
 
         distance = (dx**2) + (dy**2);
         force = -(cursor_radius**2)/ distance;
@@ -145,16 +101,9 @@ function update(){
         }
         p.vx *= gi;
         p.vy *= gi;
-        // if(p.vx < 0.001 ){
-        //     p.motion = "static";
-        // }
+        
         p.x += p.vx + (p.original_x - p.x) * (gi-0.7)
         p.y += p.vy + (p.original_y - p.y) * (gi - 0.7)
-        // ctx.beginPath();
-        // ctx.arc(p.x, p.y, 1, 0, Math.PI * 2, true);
-        // ctx.closePath();
-        // ctx.fillStyle = "white";
-        // ctx.fill();
         
     }
     draw();
@@ -170,19 +119,14 @@ function draw() {
 
     for (let k = 0; k < particles_array.length; k++) {
         p = particles_array[k];
-        // if(p.motion === "dynamic"){
         ctx.beginPath();
         ctx.arc(p.x, p.y, 3, 0, Math.PI * 2, true);
         ctx.closePath();
         cl = cl % 360
         if(k > 2500){
-            // if(p.x < 350 && p.y < 350){
-            
             ctx.fillStyle = "hsl("+cl+",100%, 50%)"
-            // }
         } else {
-            
-             
+
             ctx.fillStyle = "hsl(" + (cl+180) + ",100%, 50%)"
         } 
         cl += 0.00009
