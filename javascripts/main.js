@@ -165,7 +165,7 @@ function update(){
 
 function draw() {
     ctx.clearRect(0,0,canvas.width, canvas.height);
-    ctx.fillStyle = "#191919"
+    ctx.fillStyle = "black"
     ctx.fillRect(0,0,canvas.width, canvas.height);
 
     for (let k = 0; k < particles_array.length; k++) {

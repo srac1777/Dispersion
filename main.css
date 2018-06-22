@@ -7,8 +7,13 @@
     src: url('./assets/HalogenGasLights.otf')
 }
 
+@font-face {
+    font-family: bars;
+    src: url('./assets/mexcellent\ rg.ttf')
+}
+
 html {
-    background: #191919;
+    background: black;
     color: white;
     
 }
@@ -26,7 +31,7 @@ html {
     flex-direction: row;
     justify-content: space-between;
     margin-top: 20px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 /* .all-canvas {
@@ -42,14 +47,14 @@ box-shadow: -1px 17px 80px 15px #ff0080;
 }
 
 .heading-title {
- font-family: 'gaslamp';
- font-size: 56px;
+ font-family: 'bars';
+ font-size: 64px;
  /* margin-left: 70px; */
  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
- animation-name: ex;
+ /* animation-name: ex;
 animation-duration: 10s;
 animation-direction: alternate-reverse;
-animation-iteration-count: infinite;
+animation-iteration-count: infinite; */
 }
 
 
@@ -57,4 +62,45 @@ animation-iteration-count: infinite;
 .slider {
     width: 500px;
     height: 20px;
+}
+
+.l-arr {
+    background-image: url('./assets/neonarrow2.png');
+    transform: rotate(180deg);
+
+    width: 50px;
+    height: 50px;
+    background-size: 200%;
+}
+
+.r-arr {
+    background-image: url('./assets/neonarrow2.png');
+    /* transform: rotate(180deg); */
+    width: 50px;
+    height: 50px;
+    background-size: 200%;
+}
+
+
+
+.Space-Time {
+    display: flex;
+    flex-direction: row;
+}
+
+.Space-Time-text {
+    font-family: 'gaslamp';
+    margin: 10px;
+    font-size: 30px;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #228DFF, 0 0 30px #228DFF, 0 0 40px #228DFF, 0 0 55px #228DFF, 0 0 75px #228DFF;
+    /* animation-name: ex;
+animation-duration: 10s;
+animation-direction: alternate-reverse;
+animation-iteration-count: infinite; */
+}
+
+.bottom-all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
