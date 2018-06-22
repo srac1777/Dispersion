@@ -12,6 +12,7 @@
 html {
     background: black;
     color: white;
+    user-select: none;
     
 }
 
@@ -55,7 +56,7 @@ html {
  font-family: 'bars';
  font-size: 64px;
  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
- margin-left: 100px;
+ margin-left: 70px;
 }
 
 .DN {
@@ -148,6 +149,8 @@ html {
     height: 40px;
     
 }
+
+/* Slider Styling with help from http://danielstern.ca/range.css/#/ */
 
 input[type=range] {
   -webkit-appearance: none;
