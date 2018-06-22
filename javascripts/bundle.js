@@ -92,7 +92,7 @@ let force, distance;
 let dx, dy, vx, vy;
 let theta;
 let changed_particles_array = [];
-let gi=0.95;
+let gi = 0.95;
 let cl = 0;
 
 
@@ -104,7 +104,7 @@ gravity_input.addEventListener("input", updateGi);
 
 function updateGi(val){
     gi = gravity_input.value
-    console.log(gi);
+    // console.log(gi);
 }
 
 
@@ -151,11 +151,11 @@ function setup(){
     }
 
 
-    bounds = canvas.getBoundingClientRect();
+    boundary = canvas.getBoundingClientRect();
     
-    canvas.addEventListener('mousemove', function (e) {
-        mouseX = e.clientX - bounds.left;
-        mouseY = e.clientY - bounds.top;
+    canvas.addEventListener('mousemove', function (event) {
+        mouseX = event.clientX - boundary.left;
+        mouseY = event.clientY - boundary.top;
     });
 }
 
@@ -182,8 +182,8 @@ function update(){
         p.vx *= gi;
         p.vy *= gi;
         
-        p.x += p.vx + (p.original_x - p.x) * (gi-0.7)
-        p.y += p.vy + (p.original_y - p.y) * (gi - 0.7)
+        p.x += p.vx + (p.original_x - p.x) * (gi-0.7);
+        p.y += p.vy + (p.original_y - p.y) * (gi - 0.7);
         
     }
     draw();
