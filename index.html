@@ -5,10 +5,26 @@
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <title>Dispersion</title>
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
 <body>
-    <canvas id="canvas" height="800px" width="1200px">Canvas not working.</canvas>
+    <div class="body-divs">
+        <div class="header">
+            <div></div>
+            <div class="heading-title">Dispersion</div>
+            <div></div>
+
+        </div>
+        <div class="all-canvas"><canvas id="canvas" width="1000px" height="700px">Canvas not working.</canvas></div>
+        <div>
+            <div>
+                <div></div>
+                <div>Slide to distort the Space-Time Continuum</div>
+                <div></div>
+            </div>
+            <div><input class="slider" id="gravity" type="range" min="0.6" max="0.95" step="any"></div>
+        </div>
+    </div>
     <script type="application/javascript" src="javascripts/bundle.js"></script>
 </body>
 </html>

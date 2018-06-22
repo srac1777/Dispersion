@@ -1,0 +1,60 @@
+/* #canvas {
+    width: 60vw;
+    height: 60vh;
+} */
+@font-face {
+    font-family: gaslamp;
+    src: url('./assets/HalogenGasLights.otf')
+}
+
+html {
+    background: #191919;
+    color: white;
+    
+}
+
+.body-divs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* .all-canvas {
+    -webkit-box-shadow: -1px 17px 80px 15px #ff0080;
+-moz-box-shadow: -1px 17px 80px 15px #ff0080;
+box-shadow: -1px 17px 80px 15px #ff0080;
+} */
+
+@keyframes ex {
+    0%   { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;}
+    50%   { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #069E2D, 0 0 30px #069E2D, 0 0 40px #069E2D, 0 0 55px #069E2D, 0 0 75px #069E2D;}
+    100% { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #228DFF, 0 0 30px #228DFF, 0 0 40px #228DFF, 0 0 55px #228DFF, 0 0 75px #228DFF;}
+}
+
+.heading-title {
+ font-family: 'gaslamp';
+ font-size: 56px;
+ /* margin-left: 70px; */
+ text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
+ animation-name: ex;
+animation-duration: 10s;
+animation-direction: alternate-reverse;
+animation-iteration-count: infinite;
+}
+
+
+
+.slider {
+    width: 500px;
+    height: 20px;
+}
