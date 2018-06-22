@@ -83,10 +83,7 @@ html {
 
 
 
-.slider {
-    width: 500px;
-    height: 20px;
-}
+
 
 .l-arr {
     background-image: url('./assets/neonarrow2.png');
@@ -129,7 +126,7 @@ html {
     font-family: 'bars';
     font-size: 20px;
     margin-right: 20px;
-    text-shadow: 0 0 5px #fff, 0 0 300px #fff, 0 0 10px #069E2D, 0 0 10px #069E2D, 0 0 20px #069E2D, 0 0 15px #069E2D, 0 0 25px #069E2D;
+    text-shadow: 0 0 5px #fff, 0 0 300px #fff, 0 0 10px #228DFF, 0 0 10px #228DFF, 0 0 20px #228DFF, 0 0 15px #228DFF, 0 0 25px #228DFF;
     margin-top: 10px;
 }
 
@@ -149,4 +146,93 @@ html {
     margin-left: 0px;
     width: 45px;
     height: 40px;
+    
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 500px;
+  margin: 15.55px 0;
+  background: black;
+  /* margin-top: 20px; */
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 7px;
+  cursor: pointer;
+box-shadow: 0 0 15px 5px #228dff, 0px 0px 4.9px #228dff;  background: #c8e3ff;
+  border-radius: 25px;
+  border: 0px solid rgba(1, 1, 1, 0);
+}
+input[type=range]::-webkit-slider-thumb {
+    box-shadow: 0 0 5px #fff, 0 0 300px #fff, 0 0 10px rgba(255, 0, 128, 1), 0 0 10px rgba(255, 0, 128, 1), 0 0 20px rgba(255, 0, 128, 1), 0 0 15px rgba(255, 0, 128, 1), 0 0 25px rgba(255, 0, 128, 1);
+  border: 10px solid rgba(0, 0, 0, 0);
+  height: 35px;
+  width: 18px;
+  border-radius: 50px;
+  background: rgb(255, 192, 223);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -15.55px;
+}
+/* input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #95c8ff;
+} */
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 13.9px;
+  cursor: pointer;
+  background: #95c8ff;
+box-shadow: 4.9px 4.9px 15px #228dff, 0px 0px 4.9px #228dff;  border-radius: 25px;
+  border: 0px solid rgba(1, 1, 1, 0);
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 12.5px 12.5px 0px rgba(0, 0, 0, 0), 0px 0px 12.5px rgba(13, 13, 13, 0);
+  border: 10px solid rgba(0, 0, 0, 0);
+  height: 35px;
+  width: 23px;
+  border-radius: 50px;
+  background: rgba(255, 0, 128, 0.91);
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 13.9px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #95c8ff;
+  border: 0px solid rgba(1, 1, 1, 0);
+  border-radius: 50px;
+box-shadow: 4.9px 4.9px 15px #228dff, 0px 0px 4.9px #228dff;}
+input[type=range]::-ms-fill-upper {
+  background: #95c8ff;
+  border: 0px solid rgba(1, 1, 1, 0);
+  border-radius: 50px;
+box-shadow: 4.9px 4.9px 15px #228dff, 0px 0px 4.9px #228dff;}
+input[type=range]::-ms-thumb {
+    box-shadow: 0 0 5px #fff, 0 0 300px #fff, 0 0 10px #228dff, 0 0 10px #228dff, 0 0 20px #228dff, 0 0 15px #228dff, 0 0 25px #228dff;
+  border: 10px solid rgba(0, 0, 0, 0);
+  height: 35px;
+  width: 23px;
+  border-radius: 50px;
+  background: rgba(255, 0, 128, 0.91);
+  cursor: pointer;
+  height: 13.9px;
+}
+/* input[type=range]:focus::-ms-fill-lower {
+  background: #95c8ff;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #95c8ff;
+} */
+
+.slll {
+    margin-top: 20px;
 }
