@@ -21,7 +21,7 @@ html {
     font-size: 21px;
     text-align: center;
 
-    -webkit-animation: fadein 4s;
+    -webkit-animation: fadein 0.5s;
 }
 
 @keyframes fadein {
