@@ -114,7 +114,7 @@ function update(){
 
 function draw() {
     ctx.clearRect(0,0,canvas.width, canvas.height);
-    ctx.fillStyle = "black"
+    ctx.fillStyle = "black";
     ctx.fillRect(0,0,canvas.width, canvas.height);
 
     for (let k = 0; k < particles_array.length; k++) {
@@ -122,8 +122,8 @@ function draw() {
         ctx.beginPath();
         ctx.arc(p.x, p.y, 3, 0, Math.PI * 2, true);
         ctx.closePath();
-        cl = cl % 360
-        if(k > 2500){
+        cl = cl % 360;
+        if(k > 2499){
             ctx.fillStyle = "hsl("+cl+",100%, 50%)"
         } else {
 
